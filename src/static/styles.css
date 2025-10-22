@@ -87,12 +87,15 @@ section h3 {
 }
 
 .participants-list {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none; /* hide default bullets */
+  padding-left: 0;
   margin: 0;
 }
 
-.participants-list li {
+.participants-list .participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: linear-gradient(180deg, #ffffff, #f7fbff);
   border: 1px solid #e6eefc;
   color: #063a6b;
@@ -100,6 +103,27 @@ section h3 {
   border-radius: 6px;
   margin-bottom: 6px;
   font-size: 14px;
+}
+
+.participants-list .participant-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background: rgba(198, 40, 40, 0.08);
 }
 
 /* Empty-state line when there are no participants yet */
